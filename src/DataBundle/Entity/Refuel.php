@@ -50,10 +50,22 @@ class Refuel
     private $amountPurchased;
 
     /**
+     * @var FuelType
+     * @ORM\OneToOne(targetEntity="FuelType")
+     */
+    private $type;
+
+    /**
      * @var Car
      * @ORM\ManyToOne(targetEntity="Car", inversedBy="refuels")
      */
     private $car;
+
+    /**
+     * @var PetrolStation
+     * @ORM\ManyToOne(targetEntity="PetrolStation")
+     */
+    private $petrolStation;
 
     /**
      * Get id
@@ -158,6 +170,24 @@ class Refuel
     }
 
     /**
+     * @return FuelType
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param FuelType $type
+     * @return Refuel
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+        return $this;
+    }
+
+    /**
      * @return Car
      */
     public function getCar()
@@ -174,4 +204,23 @@ class Refuel
         $this->car = $car;
         return $this;
     }
+
+    /**
+     * @return PetrolStation
+     */
+    public function getPetrolStation()
+    {
+        return $this->petrolStation;
+    }
+
+    /**
+     * @param PetrolStation $petrolStation
+     * @return Refuel
+     */
+    public function setPetrolStation($petrolStation)
+    {
+        $this->petrolStation = $petrolStation;
+        return $this;
+    }
+
 }
