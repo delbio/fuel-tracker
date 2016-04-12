@@ -49,6 +49,11 @@ class Refuel
      */
     private $amountPurchased;
 
+    /**
+     * @var Car
+     * @ORM\ManyToOne(targetEntity="Car", inversedBy="refuels")
+     */
+    private $car;
 
     /**
      * Get id
@@ -150,5 +155,23 @@ class Refuel
     public function getAmountPurchased()
     {
         return $this->amountPurchased;
+    }
+
+    /**
+     * @return Car
+     */
+    public function getCar()
+    {
+        return $this->car;
+    }
+
+    /**
+     * @param Car $car
+     * @return Refuel
+     */
+    public function setCar($car)
+    {
+        $this->car = $car;
+        return $this;
     }
 }
