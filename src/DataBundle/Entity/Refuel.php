@@ -51,7 +51,7 @@ class Refuel
 
     /**
      * @var FuelType
-     * @ORM\OneToOne(targetEntity="FuelType")
+     * @ORM\ManyToOne(targetEntity="FuelType")
      */
     private $type;
 
