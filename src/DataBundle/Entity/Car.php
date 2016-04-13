@@ -31,7 +31,7 @@ class Car
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="Refuel", mappedBy="car")
+     * @ORM\OneToMany(targetEntity="Refuel", mappedBy="car", cascade={"remove"})
      */
     private $refuels;
 
