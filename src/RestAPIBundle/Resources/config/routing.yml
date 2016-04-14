@@ -1,3 +1,8 @@
-rest_api_homepage:
-    path:     /
-    defaults: { _controller: RestAPIBundle:Default:index }
+#car:
+#  type: rest
+#  resource: "@RestAPIBundle/Controller/CarController.php"
+
+#refuel:
+#  type: rest
+#  parent: car
+#  resource: "@RestAPIBundle/Controller/ReFuelController.php"
