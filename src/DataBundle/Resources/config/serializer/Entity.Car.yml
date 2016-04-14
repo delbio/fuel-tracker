@@ -1,0 +1,9 @@
+DataBundle\Entity\Car:
+  exclusion_policy: ALL
+  xml_root_name: car
+  properties:
+    id:
+      expose: true
+    name:
+      expose: true
+      type: string
