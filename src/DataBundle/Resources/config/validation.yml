@@ -1,0 +1,4 @@
+DataBundle\Entity\Car:
+    properties:
+        name:
+            - NotBlank: ~
