@@ -2,3 +2,17 @@ DataBundle\Entity\Car:
     properties:
         name:
             - NotBlank: ~
+
+DataBundle\Entity\PetrolStation:
+    constraints:
+            - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: name
+    properties:
+        name:
+            - NotBlank: ~
+
+DataBundle\Entity\FuelType:
+    constraints:
+            - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: name
+    properties:
+        name:
+            - NotBlank: ~
