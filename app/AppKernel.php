@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new RestAPIBundle\RestAPIBundle(),
             new \JMS\SerializerBundle\JMSSerializerBundle(),
             new FOS\RestBundle\FOSRestBundle(),
+            new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
 
         );
 
