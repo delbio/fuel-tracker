@@ -1,6 +1,6 @@
-#car:
-#  type: rest
-#  resource: "@RestAPIBundle/Controller/CarController.php"
+car:
+  type: rest
+  resource: "@RestAPIBundle/Controller/CarController.php"
 
 #refuel:
 #  type: rest
