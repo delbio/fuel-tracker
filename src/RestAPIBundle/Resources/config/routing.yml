@@ -10,3 +10,7 @@ refuel:
 fuel_type:
   type: rest
   resource: "@RestAPIBundle/Controller/FuelTypeController.php"
+
+petrol_station:
+  type: rest
+  resource: "@RestAPIBundle/Controller/PetrolStationController.php"
