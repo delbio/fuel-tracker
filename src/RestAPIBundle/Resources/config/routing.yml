@@ -6,3 +6,7 @@ refuel:
   type: rest
   parent: car
   resource: "@RestAPIBundle/Controller/ReFuelController.php"
+
+fuel_type:
+  type: rest
+  resource: "@RestAPIBundle/Controller/FuelTypeController.php"
