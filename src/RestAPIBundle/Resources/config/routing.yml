@@ -2,7 +2,7 @@ car:
   type: rest
   resource: "@RestAPIBundle/Controller/CarController.php"
 
-#refuel:
-#  type: rest
-#  parent: car
-#  resource: "@RestAPIBundle/Controller/ReFuelController.php"
+refuel:
+  type: rest
+  parent: car
+  resource: "@RestAPIBundle/Controller/ReFuelController.php"
