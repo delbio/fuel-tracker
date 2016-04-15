@@ -9,6 +9,8 @@ use FOS\RestBundle\Controller\Annotations;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\View\View;
 
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
+
 use Symfony\Component\Form\FormTypeInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,7 +30,7 @@ class CarController extends FOSRestController
 
     /**
      * List all cars.
-     * ApiDoc(
+     * @ApiDoc(
      *   resource = true,
      *   statusCodes = {
      *     200 = "Returned when successful"
@@ -36,7 +38,6 @@ class CarController extends FOSRestController
      * )
      * @Annotations\View()
      *
-     * @var Request $request
      * @return array
      */
     public function getCarsAction()
@@ -48,7 +49,7 @@ class CarController extends FOSRestController
     /**
      * Get a single car.
      *
-     * ApiDoc(
+     * @ApiDoc(
      *   output = "DataBundle\Entity\Car",
      *   statusCodes = {
      *     200 = "Returned when successful",
@@ -61,9 +62,9 @@ class CarController extends FOSRestController
      * @param Request $request the request object
      * @param int     $id      the car id
      *
-     * @return array
+     * @return View
      *
-     * @throws NotFoundHttpException when note not exist
+     * @throws NotFoundHttpException when car not exist
      */
     public function getCarAction(Request $request, $id)
     {
@@ -80,7 +81,7 @@ class CarController extends FOSRestController
     /**
      * Creates a new car from the submitted data.
      *
-     * ApiDoc(
+     * @ApiDoc(
      *   resource = true,
      *   input = "DataBundle\Form\CarType",
      *   statusCodes = {
@@ -118,10 +119,11 @@ class CarController extends FOSRestController
     /**
      * Removes a car.
      *
-     * ApiDoc(
+     * @ApiDoc(
      *   resource = true,
      *   statusCodes={
-     *     204="Returned when successful"
+     *     204="Returned when successful",
+     *     404 = "Returned when the car is not found"
      *   }
      * )
      *
@@ -129,6 +131,8 @@ class CarController extends FOSRestController
      * @param int     $id      the car id
      *
      * @return View
+     *
+     * @throws NotFoundHttpException when car not exist
      */
     public function deleteCarsAction(Request $request, $id)
     {
@@ -144,25 +148,5 @@ class CarController extends FOSRestController
         // There is a debate if this should be a 404 or a 204
         // see http://leedavis81.github.io/is-a-http-delete-requests-idempotent/
         return $this->routeRedirectView('get_cars', array(), Response::HTTP_NO_CONTENT);
-    }
-
-    /**
-     * Removes a note.
-     *
-     * ApiDoc(
-     *   resource = true,
-     *   statusCodes={
-     *     204="Returned when successful"
-     *   }
-     * )
-     *
-     * @param Request $request the request object
-     * @param int     $id      the car id
-     *
-     * @return View
-     */
-    public function removeCarsAction(Request $request, $id)
-    {
-        return $this->deleteCarsAction($request, $id);
     }
 }
