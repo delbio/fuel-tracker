@@ -16,3 +16,20 @@ DataBundle\Entity\FuelType:
     properties:
         name:
             - NotBlank: ~
+
+DataBundle\Entity\Refuel:
+    properties:
+        date:
+            - NotBlank: ~
+        carDistance:
+            - NotBlank: ~
+        unitPrice:
+            - NotBlank: ~
+        amountPurchased:
+            - NotBlank: ~
+        type:
+            - NotBlank: ~
+        car:
+            - NotBlank: ~
+        petrolStation:
+            - NotBlank: ~
