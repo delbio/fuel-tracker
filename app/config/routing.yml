@@ -1,6 +1,7 @@
 rest_api:
     type: rest
     resource: "@RestAPIBundle/Resources/config/routing.yml"
+    prefix:   /api
 
 NelmioApiDocBundle:
   resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
