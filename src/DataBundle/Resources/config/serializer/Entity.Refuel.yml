@@ -1,0 +1,20 @@
+DataBundle\Entity\Refuel:
+  exclusion_policy: ALL
+  xml_root_name: refuel
+  properties:
+    id:
+      expose: true
+    date:
+      expose: true
+    carDistance:
+      expose: true
+    unitPrice:
+      expose: true
+    amountPurchased:
+      expose: true
+    type:
+      expose: true
+      type: DataBundle\Entity\FuelType
+    petrolStation:
+      expose: true
+      type: DataBundle\Entity\PetrolStation
