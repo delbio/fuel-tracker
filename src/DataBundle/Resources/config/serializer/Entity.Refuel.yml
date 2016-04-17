@@ -8,13 +8,17 @@ DataBundle\Entity\Refuel:
       expose: true
     carDistance:
       expose: true
+      serialized_name: "carDistance"
     unitPrice:
       expose: true
+      serialized_name: "unitPrice"
     amountPurchased:
       expose: true
+      serialized_name: "amountPurchased"
     type:
       expose: true
       type: DataBundle\Entity\FuelType
     petrolStation:
       expose: true
       type: DataBundle\Entity\PetrolStation
+      serialized_name: "petrolStation"
