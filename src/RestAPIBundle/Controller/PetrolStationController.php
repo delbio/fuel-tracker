@@ -39,7 +39,7 @@ class PetrolStationController extends FOSRestController
     public function getPetrolstationsAction()
     {
         $cars = $this->getPetrolStationManager()->findAll();
-        return ['petrol_stations' => $cars];
+        return ['petrolStations' => $cars];
     }
 
     /**
